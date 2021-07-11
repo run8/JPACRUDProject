@@ -1,0 +1,4 @@
+rootProject.name = 'ParagliderApp'
+
+
+includeFlat 'JPAParaglider_manufacturer'

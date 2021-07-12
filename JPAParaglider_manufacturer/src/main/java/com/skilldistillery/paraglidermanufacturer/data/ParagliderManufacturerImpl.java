@@ -32,24 +32,19 @@ public class ParagliderManufacturerImpl implements ParagliderManufacturerDAO {
 	}
 
 	@Override
-	public boolean addNewManufacturer(ParagliderManufacturer pm) {
-		EntityManager em = emf.createEntityManager();
-		// start the transaction
+	public boolean updateManufacturer(ParagliderManufacturer pm) {
+
+		ParagliderManufacturer pmf = em.find(pm.getClass(), pm.getId());
 		em.getTransaction().begin();
-		// write the customer to the database
-		em.persist(pm);
-		// update the "local" Customer object
+
+		pmf.setCompanyName(pm.getCompanyName());
+		pmf.setCountry(pm.getCountry());
+		pmf.setDescription(pm.getDescription());
+		pmf.setUrl(pm.getUrl());
+		pmf.setYearFounded(pm.getYearFounded());
 		em.flush();
-		// commit the changes (actually perform the operation)
 		em.getTransaction().commit();
-
-		return false;
-	}
-
-	@Override
-	public boolean updateManufacturer() {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
@@ -77,6 +72,24 @@ public class ParagliderManufacturerImpl implements ParagliderManufacturerDAO {
 		em.getTransaction().commit();
 		em.close();
 		return manufacturers;
+	}
+
+	@Override
+	public boolean addNewManufacturer(ParagliderManufacturer pm) {
+		// start the transaction
+		em.getTransaction().begin();
+		System.out.println(pm);
+		// write the customer to the database
+		em.persist(pm);
+		
+		// update the "local" ParagliderManufacturer object
+		em.flush();
+		
+		// commit the changes (actually perform the operation)
+		em.getTransaction().commit();
+		System.out.println(pm);
+
+		return true;
 	}
 
 

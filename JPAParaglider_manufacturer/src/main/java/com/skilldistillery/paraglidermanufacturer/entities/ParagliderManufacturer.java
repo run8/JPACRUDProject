@@ -29,23 +29,17 @@ public class ParagliderManufacturer {
 	
 	public ParagliderManufacturer() {	}
 
-	public ParagliderManufacturer(int id, String companyName, String country, int yearFounded, String description,
-			String url) {
-		super();
-		this.id = id;
-		this.companyName = companyName;
-		this.country = country;
-		this.yearFounded = yearFounded;
-		this.description = description;
-		this.url = url;
-	}
+//	public ParagliderManufacturer(String companyName, String country, int yearFounded, String description, String url) {
+//		super();
+//		this.companyName = companyName;
+//		this.country = country;
+//		this.yearFounded = yearFounded;
+//		this.description = description;
+//		this.url = url;
+//	}
 
 	public int getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getCompanyName() {

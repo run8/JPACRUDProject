@@ -19,8 +19,17 @@ public class ManufacturerClient {
 
 //		mc.callFindManufacturersByCountry("Switzerland", pm);
 		
-		mc.callFindById(3, pm);
+//		mc.callFindById(3, pm);
+		
+		ParagliderManufacturer newPm = new ParagliderManufacturer();
+		newPm.setCompanyName("New Paraglider Company");
+		newPm.setCountry("USA");
+		newPm.setDescription("The most awseomest company");
+		newPm.setUrl("mostAwesomeParagliders.com");
+		newPm.setYearFounded(2021);
+		mc.callAddNewManufacturer(newPm);
 
+		
 	}
 
 	private void callFindById(int id, ParagliderManufacturerImpl pm) {
@@ -42,4 +51,14 @@ public class ManufacturerClient {
 			System.out.println(pmle.toString());
 		}
 	}
+	
+	public boolean callAddNewManufacturer(ParagliderManufacturer pm) {
+		ParagliderManufacturerImpl pmImpl = new ParagliderManufacturerImpl();
+		System.out.println("Before persisted: " + pm);
+		pmImpl.addNewManufacturer(pm);
+		System.out.println("After persisted: " + pm);
+		
+		return true;
+	}
+
 }

@@ -8,8 +8,8 @@ public interface ParagliderManufacturerDAO {
 	public ParagliderManufacturer findById(int id);
 	public List<ParagliderManufacturer> findManufacturersByCountry(String country);
 	public List<ParagliderManufacturer> listAllManufacturer();
-	public boolean addNewManufacturer(ParagliderManufacturer pm);
-	public boolean updateManufacturer(ParagliderManufacturer pm);
+	public ParagliderManufacturer updateManufacturer(ParagliderManufacturer pm);
+	public ParagliderManufacturer addNewManufacturer(ParagliderManufacturer pm);
 	
 
 }

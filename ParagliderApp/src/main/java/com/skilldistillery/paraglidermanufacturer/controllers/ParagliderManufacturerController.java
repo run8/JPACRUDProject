@@ -54,14 +54,15 @@ public class ParagliderManufacturerController {
 	
 	@RequestMapping(path = "um.do", method = RequestMethod.GET)
 	public String editManufacturerForm(Model model, int id) {	
-		
-		model.addAttribute("pm", dao.findById(id));
+		ParagliderManufacturer p1 = dao.findById(id);
+		model.addAttribute("pm", p1);
 		
 		return "updateManufacturerData";
 	}
 	
 	@RequestMapping(path = "umf.do", method = RequestMethod.POST)
 	public String updateManufacturer(Model model, ParagliderManufacturer pm) {	
+		System.out.println("*********************** pm:" + pm);
 		model.addAttribute("pm", dao.updateManufacturer(pm));
 		return "displayManufacturerData";
 	}

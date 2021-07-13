@@ -27,7 +27,7 @@
 
 
 	<form method=POST action="umf.do">
-		<input type="hidden" name="id" />
+		<input type="text" name="id" value="${pm.id }" />
 		<label for="companyName">Company Name:</label><br> 
 		<input	type="text" id="companyName" name="companyName"
 			/><br> 
